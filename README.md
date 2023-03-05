@@ -13,6 +13,6 @@ tipos:
 6. refactor: tipo utilizado em quaisquer mudanças que sejam executados no código, porém não alterem a funcionalidade final da tarefa impactada;
 7. style: alterações referentes a formatações na apresentação do código que não afetam o significado do código;
 8. test: adicionando testes ausentes ou corrigindo testes existentes nos processos de testes automatizados (TDD);
-9. chore: atualização de tarefas que não ocasionam alteração no código de produção, mas mudanças de ferramentas, mudanças de configuração e bibliotecas que realmente não 10. entram em produção;
-11. env: utilizado na descrição de modificações ou adições em arquivos de configuração de parâmetros em arquivos de configuração.
-12. ci: alteração nos scripts ou arquivos de configuração CI.
+9. chore: atualização de tarefas que não ocasionam alteração no código de produção, mas mudanças de ferramentas, mudanças de configuração e bibliotecas que realmente não entram em produção;
+10. env: utilizado na descrição de modificações ou adições em arquivos de configuração de parâmetros em arquivos de configuração.
+11. ci: alteração nos scripts ou arquivos de configuração CI.
