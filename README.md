@@ -1,4 +1,4 @@
-# trailerfliex-frontend
+# trailerflix-frontend
 
 ## Commits Semânticos
 
