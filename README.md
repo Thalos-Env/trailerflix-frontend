@@ -16,16 +16,17 @@ Para instalar as dependências:
 ```
 npm install
 ```
-
+- storybook
+- react router dom
+- testing library
+- styled-components
+  - jest-styled-components
 - eslint
 - prettier
 - husky
 - lint staged
-- styled-components
-  - jest-styled-components
 - editor config
-- storybook
-- react router dom
+
 
 ---
 
