@@ -21,6 +21,7 @@ npm install
 - testing library
 - styled-components
   - jest-styled-components
+- plop
 - eslint
 - prettier
 - husky
@@ -41,6 +42,30 @@ npm install
 - EditorConfig for VS Code
   - https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 
+
+---
+
+## Gerar arquivos para componentes automaticamente
+Para gerar uma pasta contendo 4 arquivos do componente automaticamente basta usar o comando abaixo colocando o nome do componente desejado.
+
+````
+npm run generate [NOME DO COMPONENTE]
+
+````
+
+O comando irá gerar a pasta contendo os 4 arquivos abaixo.
+
+````
+.
+├── Component
+│   └── Component.stories.tsx
+│   └── Component.test.tsx
+│   └── index.tsx
+│   └── styles.ts
+
+````
+
+PS: o próprio plopfile.js já coloca em Pascal Case.
 
 ---
 
