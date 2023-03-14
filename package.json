@@ -30,7 +30,8 @@
     "format": "prettier --write ./src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "generate": "plop --plopfile generators/plopfile.js"
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
@@ -91,6 +92,7 @@
     "husky": "^8.0.3",
     "jest-styled-components": "^7.1.1",
     "lint-staged": "^13.2.0",
+    "plop": "^3.1.2",
     "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
