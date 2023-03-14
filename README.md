@@ -1,10 +1,54 @@
 # trailerflix-frontend
 
+## Configurando Ambiente
+
+### Recomendações
+
+Criar um Perfil (Profile) no VSCode para evitar que alguma configuração do settings.json, Eslint, Prettier, EditorConfig, dê conflitos
+
+- Arquivo > Preferências > Perfil > Criar Perfil
+
+---
+
+### Tecnologias utilizadas
+Para instalar as dependências:
+
+```
+npm install
+```
+
+- eslint
+- prettier
+- husky
+- lint staged
+- styled-components
+  - jest-styled-components
+- editor config
+- storybook
+- react router dom
+
+---
+
+### Extensões para instalar
+
+- ESLint
+  - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+- Prettier - Code formatter
+  - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+- vscode-styled-components
+  - https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components
+- EditorConfig for VS Code
+  - https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+
+
+---
+
 ## Commits Semânticos
 
 link para consulta: https://blog.geekhunter.com.br/o-que-e-commit-e-como-usar-commits-semanticos/
 
 tipos:
+
 1. build: alterações que afetam o sistema de construção ou dependências externas;
 2. docs: referem-se a inclusão ou alteração somente de arquivos de documentação;
 3. feat: tratam adições de novas funcionalidades ou de quaisquer outras novas implantações ao código;
