@@ -1,0 +1,86 @@
+export default {
+  grid: {
+    container: '130rem',
+    gutter: '3.2rem',
+  },
+  border: {
+    radius: {
+      small: '0.4rem',
+      medium: '0.8rem',
+      large: '1.6rem',
+    },
+    colors: {
+      white: '#FFFFFF',
+      whiteTransparent: '#FFFFFF30',
+      inputError: '#FF000050',
+    },
+    size: {
+      small: '0.1rem',
+      medium: '0.2rem',
+      large: '0.3rem',
+    },
+  },
+  font: {
+    family:
+      'Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+    light: 300,
+    normal: 400,
+    bold: 600,
+    sizes: {
+      xsmall: '1.2rem',
+      small: '1.4rem',
+      medium: '1.6rem',
+      large: '1.8rem',
+      xlarge: '2.0rem',
+      xxlarge: '2.8rem',
+      huge: '5.2rem',
+    },
+  },
+  colors: {
+    primary: '#1570EF',
+    secondary: '#14EBF9',
+    lightBg: '#F2F2F2',
+    mainBg: '#171A29',
+    cardBg: '#383F49',
+    hoverPrimary: '#2F82F6',
+    white: '#FAFAFA',
+    black: '#030517',
+    lightGray: '#EAEAEA',
+    gray: '#404249',
+    darkGray: '#2E2F42',
+    badge: {
+      greenBg: '#ABFAB3',
+      greenText: '#00710B',
+      yellowBg: '#FAF2AB',
+      yellowText: '#996500',
+      blueBg: '#ABE7FA',
+      blueText: '#004171',
+    },
+    avatar: {
+      cyan: '#14EBF9',
+      pink: '#FF12CB',
+      yellow: '#F4F914',
+      green: '#34F914',
+    },
+  },
+  spacings: {
+    xxsmall: '0.8rem',
+    xsmall: '1.6rem',
+    small: '2.4rem',
+    medium: '3.2rem',
+    large: '4.0rem',
+    xlarge: '4.8rem',
+    xxlarge: '5.6rem',
+  },
+  layers: {
+    base: 10,
+    menu: 20,
+    overlay: 30,
+    modal: 40,
+    alwaysOnTop: 50,
+  },
+  transition: {
+    default: '0.3s ease-in-out',
+    fast: '0.1s ease-in-out',
+  },
+} as const
