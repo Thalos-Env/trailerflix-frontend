@@ -4,7 +4,21 @@ export default {
     gutter: '3.2rem',
   },
   border: {
-    radius: '0.4rem',
+    radius: {
+      small: '0.4rem',
+      medium: '0.8rem',
+      large: '1.6rem',
+    },
+    colors: {
+      white: '#FFFFFF',
+      whiteTransparent: '#FFFFFF30',
+      inputError: '#FF000050',
+    },
+    size: {
+      small: '0.1rem',
+      medium: '0.2rem',
+      large: '0.3rem',
+    },
   },
   font: {
     family:
@@ -23,16 +37,31 @@ export default {
     },
   },
   colors: {
-    primary: '#F231A5',
-    secondary: '#3CD3C1',
-    mainBg: '#06092B',
+    primary: '#1570EF',
+    secondary: '#14EBF9',
     lightBg: '#F2F2F2',
+    mainBg: '#171A29',
+    cardBg: '#383F49',
+    hoverPrimary: '#2F82F6',
     white: '#FAFAFA',
     black: '#030517',
     lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
+    gray: '#404249',
     darkGray: '#2E2F42',
-    red: '#FF6347',
+    badge: {
+      greenBg: '#ABFAB3',
+      greenText: '#00710B',
+      yellowBg: '#FAF2AB',
+      yellowText: '#996500',
+      blueBg: '#ABE7FA',
+      blueText: '#004171',
+    },
+    avatar: {
+      cyan: '#14EBF9',
+      pink: '#FF12CB',
+      yellow: '#F4F914',
+      green: '#34F914',
+    },
   },
   spacings: {
     xxsmall: '0.8rem',
