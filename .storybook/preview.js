@@ -4,6 +4,19 @@ import theme from '../src/styles/theme'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
+  backgrounds: {
+    default: 'mainBg',
+    values: [
+      {
+        name: 'mainBg',
+        value: theme.colors.mainBg,
+      },
+      {
+        name: 'white',
+        value: theme.colors.white,
+      },
+    ],
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,

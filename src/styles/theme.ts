@@ -8,6 +8,7 @@ export default {
       small: '0.4rem',
       medium: '0.8rem',
       large: '1.6rem',
+      circle: '50%',
     },
     colors: {
       white: '#FFFFFF',
@@ -35,6 +36,7 @@ export default {
       xxlarge: '2.8rem',
       huge: '5.2rem',
     },
+    letterSpacing: '0.2rem',
   },
   colors: {
     primary: '#1570EF',
@@ -43,6 +45,8 @@ export default {
     mainBg: '#171A29',
     cardBg: '#383F49',
     hoverPrimary: '#2F82F6',
+    hoverWhite: '#C3C3C3',
+    hoverOutline: '#F9F9F940',
     white: '#FAFAFA',
     black: '#030517',
     lightGray: '#EAEAEA',
@@ -71,6 +75,13 @@ export default {
     large: '4.0rem',
     xlarge: '4.8rem',
     xxlarge: '5.6rem',
+  },
+  icons: {
+    sizes: {
+      onlyIcon: '5rem',
+      paddingIcon: '1.8rem',
+      widthDefault: '1.5rem',
+    },
   },
   layers: {
     base: 10,
