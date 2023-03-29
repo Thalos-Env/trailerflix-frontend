@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 import { StoryContainer } from '../../../.storybook/StoryContainer'
-import Icon, { iconKey, icons } from '.'
+import Icon, { iconKey, icons, IconProps } from '.'
 
 export default {
   title: 'Icon',
@@ -12,15 +12,16 @@ export default {
   },
 } as Meta
 
-export const Default: Story = (args) => {
+export const Default: Story<IconProps> = (args) => {
   return (
     <StoryContainer>
-      <Icon icon={args.icon} />
+      <Icon {...args} />
     </StoryContainer>
   )
 }
 Default.args = {
   icon: 'add',
+  color: 'primary',
 }
 
 export const All: Story = () => {

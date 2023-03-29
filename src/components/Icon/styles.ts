@@ -1,10 +1,13 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const SvgContainer = styled.div`
-  width: 100%;
-  color: white;
+type SvgContainerProps = {
+  color: 'primary' | 'secondary' | 'white'
+  sizeRem?: string
+}
 
-  svg {
-    width: 100%;
-  }
+export const SvgContainer = styled.div<SvgContainerProps>`
+  ${({ theme, color, sizeRem }) => css`
+    width: ${sizeRem ? sizeRem : theme.icons.sizes.onlyIcon};
+    color: ${theme.colors[color]};
+  `}
 `

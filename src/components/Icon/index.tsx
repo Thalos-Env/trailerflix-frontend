@@ -64,14 +64,16 @@ export type iconKey = keyof typeof icons
 
 export type IconProps = {
   icon: iconKey
+  sizeRem?: string
   className?: string
+  color?: 'primary' | 'secondary' | 'white'
 }
 
-const Icon = ({ icon, ...rest }: IconProps) => {
+const Icon = ({ icon, sizeRem, color = 'white', ...rest }: IconProps) => {
   const IconComponent = icons[icon]
 
   return (
-    <S.SvgContainer>
+    <S.SvgContainer sizeRem={sizeRem} color={color}>
       <IconComponent aria-hidden {...rest} />
     </S.SvgContainer>
   )
