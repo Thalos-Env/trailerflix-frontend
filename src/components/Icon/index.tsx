@@ -1,3 +1,5 @@
+import * as S from './styles'
+
 import { ArrowIosBackOutline } from '@styled-icons/evaicons-outline/ArrowIosBackOutline'
 import { ArrowIosForwardOutline } from '@styled-icons/evaicons-outline/ArrowIosForwardOutline'
 import { Check } from '@styled-icons/boxicons-regular/Check'
@@ -68,7 +70,11 @@ export type IconProps = {
 const Icon = ({ icon, ...rest }: IconProps) => {
   const IconComponent = icons[icon]
 
-  return <IconComponent aria-hidden {...rest} />
+  return (
+    <S.SvgContainer>
+      <IconComponent aria-hidden {...rest} />
+    </S.SvgContainer>
+  )
 }
 
 export default Icon
