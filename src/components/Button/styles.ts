@@ -22,6 +22,10 @@ const wrapperModifiers = {
     &:hover {
       background: ${theme.colors.hoverWhite};
     }
+
+    div {
+      color: ${theme.colors.black};
+    }
   `,
   outline: (theme: DefaultTheme) => css`
     background-color: transparent;
