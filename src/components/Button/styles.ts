@@ -45,12 +45,8 @@ const wrapperModifiers = {
     align-items: center;
     justify-items: center;
 
-    svg {
-      width: ${theme.icons.sizes.widthDefault};
-
-      & + span {
-        margin-left: ${theme.spacings.xsmall};
-      }
+    div + span {
+      margin-left: ${theme.spacings.xxsmall};
     }
   `,
   onlyIcon: (theme: DefaultTheme) => css`
@@ -62,7 +58,7 @@ const wrapperModifiers = {
   onlyIconOutline: (theme: DefaultTheme) => css`
     width: ${theme.icons.sizes.onlyIcon};
     height: ${theme.icons.sizes.onlyIcon};
-    padding: calc(${theme.icons.sizes.paddingIcon} - ${theme.border.size.small});
+    padding: calc(${theme.icons.sizes.paddingIcon} - ${theme.border.size.medium});
     border-radius: ${theme.border.radius.circle};
   `,
 }

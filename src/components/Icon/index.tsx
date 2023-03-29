@@ -66,7 +66,7 @@ export type IconProps = {
   icon: iconKey
   sizeRem?: string
   className?: string
-  color?: 'primary' | 'secondary' | 'white'
+  color?: 'primary' | 'secondary' | 'white' | 'black'
 }
 
 const Icon = ({ icon, sizeRem, color = 'white', ...rest }: IconProps) => {

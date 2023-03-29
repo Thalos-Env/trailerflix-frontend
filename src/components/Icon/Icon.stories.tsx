@@ -22,13 +22,14 @@ export const Default: Story<IconProps> = (args) => {
 Default.args = {
   icon: 'add',
   color: 'primary',
+  sizeRem: '5rem',
 }
 
 export const All: Story = () => {
   return (
     <StoryContainer>
       {Object.keys(icons).map((icon) => (
-        <Icon key={icon} icon={icon as iconKey} />
+        <Icon key={icon} icon={icon as iconKey} sizeRem='5rem' />
       ))}
     </StoryContainer>
   )

@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import { Play } from '@styled-icons/fa-solid/Play'
+import Icon from '../Icon'
 import Button from '.'
 
 export default {
@@ -27,13 +27,13 @@ export const withIcon: Story = (args) => <Button {...args} />
 withIcon.args = {
   children: 'continuar',
   variant: 'primary',
-  icon: <Play />,
+  icon: <Icon icon='play' />,
 }
 
 export const onlyIcon: Story = (args) => <Button {...args} />
 onlyIcon.args = {
   variant: 'primary',
-  icon: <Play />,
+  icon: <Icon icon='play' />,
 }
 
 export const Compare: Story = () => {
@@ -49,9 +49,9 @@ export const Compare: Story = () => {
 export const CompareIcons: Story = () => {
   return (
     <>
-      <Button variant='primary' icon={<Play />} />
-      <Button variant='white' icon={<Play />} />
-      <Button variant='outline' icon={<Play />} />
+      <Button variant='primary' icon={<Icon icon='play' />} />
+      <Button variant='white' icon={<Icon icon='play' color='black' />} />
+      <Button variant='outline' icon={<Icon icon='play' />} />
     </>
   )
 }
