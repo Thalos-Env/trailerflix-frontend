@@ -22,6 +22,10 @@ const wrapperModifiers = {
     &:hover {
       background: ${theme.colors.hoverWhite};
     }
+
+    div {
+      color: ${theme.colors.black};
+    }
   `,
   outline: (theme: DefaultTheme) => css`
     background-color: transparent;
@@ -45,12 +49,8 @@ const wrapperModifiers = {
     align-items: center;
     justify-items: center;
 
-    svg {
-      width: ${theme.icons.sizes.widthDefault};
-
-      & + span {
-        margin-left: ${theme.spacings.xsmall};
-      }
+    div + span {
+      margin-left: ${theme.spacings.xxsmall};
     }
   `,
   onlyIcon: (theme: DefaultTheme) => css`
@@ -62,7 +62,7 @@ const wrapperModifiers = {
   onlyIconOutline: (theme: DefaultTheme) => css`
     width: ${theme.icons.sizes.onlyIcon};
     height: ${theme.icons.sizes.onlyIcon};
-    padding: calc(${theme.icons.sizes.paddingIcon} - ${theme.border.size.small});
+    padding: calc(${theme.icons.sizes.paddingIcon} - ${theme.border.size.medium});
     border-radius: ${theme.border.radius.circle};
   `,
 }
@@ -80,6 +80,11 @@ export const Wrapper = styled.button<WrapperProps>`
     text-transform: uppercase;
     cursor: pointer;
     border: 0;
+
+    // TODO: variable to padding-top
+    span {
+      padding-top: 0.2rem;
+    }
 
     ${!!variant && wrapperModifiers[variant](theme)}
     ${fullWidth && wrapperModifiers.fullWidth()}
