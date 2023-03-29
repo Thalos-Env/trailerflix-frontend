@@ -81,6 +81,11 @@ export const Wrapper = styled.button<WrapperProps>`
     cursor: pointer;
     border: 0;
 
+    // TODO: variable to padding-top
+    span {
+      padding-top: 0.2rem;
+    }
+
     ${!!variant && wrapperModifiers[variant](theme)}
     ${fullWidth && wrapperModifiers.fullWidth()}
     ${hasIcon && !onlyIcon && wrapperModifiers.withIcon(theme)}
