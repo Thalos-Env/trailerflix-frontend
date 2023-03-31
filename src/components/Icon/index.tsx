@@ -66,14 +66,15 @@ export type IconProps = {
   icon: iconKey
   sizeRem?: string
   className?: string
-  color?: 'primary' | 'secondary' | 'white' | 'black'
+  color?: 'primary' | 'secondary' | 'white' | 'black' | 'hoverOutline'
+  onClick?: () => void
 }
 
-const Icon = ({ icon, sizeRem, color = 'white', ...rest }: IconProps) => {
+const Icon = ({ icon, sizeRem, color, onClick, ...rest }: IconProps) => {
   const IconComponent = icons[icon]
 
   return (
-    <S.SvgContainer sizeRem={sizeRem} color={color}>
+    <S.SvgContainer sizeRem={sizeRem} color={color} cursorPointer={!!onClick} onClick={onClick}>
       <IconComponent aria-hidden {...rest} />
     </S.SvgContainer>
   )
