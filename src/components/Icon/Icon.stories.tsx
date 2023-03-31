@@ -5,11 +5,6 @@ import Icon, { iconKey, icons, IconProps } from '.'
 export default {
   title: 'Icon',
   component: Icon,
-  icon: {
-    control: {
-      type: 'disable',
-    },
-  },
 } as Meta
 
 export const Default: Story<IconProps> = (args) => {
