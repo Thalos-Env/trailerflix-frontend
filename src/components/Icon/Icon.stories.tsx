@@ -7,10 +7,11 @@ export default {
   component: Icon,
 } as Meta
 
+// TODO: use spread in args
 export const Default: Story<IconProps> = (args) => {
   return (
     <StoryContainer>
-      <Icon {...args} />
+      <Icon icon={args.icon} color={args.color} sizeRem={args.sizeRem} />
     </StoryContainer>
   )
 }
@@ -20,6 +21,7 @@ Default.args = {
   sizeRem: '5rem',
 }
 
+// TODO: add flex wrap to icons
 export const All: Story = () => {
   return (
     <StoryContainer>
