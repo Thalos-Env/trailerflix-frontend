@@ -1,9 +1,12 @@
-type LogoProps = {
+import * as S from './styles'
+
+export type LogoProps = {
+  size?: 'normal' | 'large'
   onClick?: () => void
 }
 
-const Logo = ({ onClick }: LogoProps) => (
-  <div onClick={onClick}>
+const Logo = ({ onClick, size = 'normal' }: LogoProps) => (
+  <S.Wrapper onClick={onClick} size={size}>
     <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 328 52'>
       <path
         fill='#fff'
@@ -24,7 +27,7 @@ const Logo = ({ onClick }: LogoProps) => (
         clipRule='evenodd'
       />
     </svg>
-  </div>
+  </S.Wrapper>
 )
 
 export default Logo
