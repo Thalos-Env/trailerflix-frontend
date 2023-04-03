@@ -60,10 +60,10 @@ export const icons = {
   volumeFull: VolumeFull,
 }
 
-export type iconKey = keyof typeof icons
+export type iconKeyType = keyof typeof icons
 
 export type IconProps = {
-  icon: iconKey
+  icon: iconKeyType
   sizeRem?: string
   className?: string
   color?: 'primary' | 'secondary' | 'white' | 'black' | 'hoverOutline'

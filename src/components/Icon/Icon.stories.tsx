@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 import { StoryContainer } from '../../../.storybook/StoryContainer'
-import Icon, { iconKey, icons, IconProps } from '.'
+import Icon, { iconKeyType, icons, IconProps } from '.'
 
 export default {
   title: 'Icon',
@@ -26,7 +26,7 @@ export const All: Story = () => {
   return (
     <StoryContainer>
       {Object.keys(icons).map((icon) => (
-        <Icon key={icon} icon={icon as iconKey} sizeRem='5rem' />
+        <Icon key={icon} icon={icon as iconKeyType} sizeRem='5rem' />
       ))}
     </StoryContainer>
   )
