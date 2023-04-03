@@ -21,6 +21,7 @@ npm install
 - testing library
 - styled-components
   - jest-styled-components
+- styled-icons
 - plop
 - eslint
 - prettier
