@@ -5,7 +5,7 @@ export const Wrapper = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: ${theme.spacings.xxsmall} ${theme.spacings.small};
+    margin: ${theme.spacings.xxsmall} ${theme.spacings.xsmall};
     background-color: transparent;
     font-size: ${theme.font.sizes.medium};
     font-weight: ${theme.font.bold};
