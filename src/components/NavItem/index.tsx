@@ -4,7 +4,7 @@ import Icon, { iconKeyType } from '../Icon'
 export type NavItemProps = {
   children: string
   icon: iconKeyType
-  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void
+  onClick?: () => void
 }
 
 const NavItem = ({ children, icon, onClick }: NavItemProps) => (
