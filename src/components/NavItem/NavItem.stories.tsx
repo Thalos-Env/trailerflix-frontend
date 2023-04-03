@@ -1,5 +1,4 @@
 import { Story, Meta } from '@storybook/react'
-import Icon from '../Icon'
 import NavItem, { NavItemProps } from '.'
 
 export default {
@@ -17,5 +16,5 @@ export default {
 export const Default: Story<NavItemProps> = (args) => <NavItem {...args} />
 Default.args = {
   children: 'Home',
-  icon: <Icon icon='home' />,
+  icon: 'home',
 }
