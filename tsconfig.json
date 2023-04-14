@@ -27,6 +27,7 @@
   "include": [
     "src",
     "src/custom.d.ts",
-    "src/styled-components.d.ts"
+    "src/styled-components.d.ts",
+    "build/modal"
   ]
 }
