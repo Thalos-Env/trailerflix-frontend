@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-
 import { LogoProps } from '.'
 
 // TODO: adjust the size of the logo and props
