@@ -56,10 +56,9 @@ const SignUp = () => {
         'Deve conter no mínimo 6 caracteres, uma letra maiúscula, uma minúscula, um número e um caracter especial.',
       )
       .required('A senha é obrigatória.'),
-    confirmPassword: Yup.string().oneOf(
-      [Yup.ref('password')],
-      'A confirmação de senha não está igual.',
-    ),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password')], 'A confirmação de senha não está igual.')
+      .required('A confirmação de senha é obrigatória.'),
     // acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required'),
   })
 
@@ -98,7 +97,7 @@ const SignUp = () => {
           <Form onSubmit={handleSubmit}>
             <BoxInput>
               <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Nome
+                Nome *
               </label>
               <Field
                 id='input-name'
@@ -121,7 +120,7 @@ const SignUp = () => {
             </BoxInput>
             <BoxInput>
               <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Email
+                Email *
               </label>
               <Field
                 type='email'
@@ -144,7 +143,7 @@ const SignUp = () => {
             </BoxInput>
             <BoxInput>
               <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Senha
+                Senha *
               </label>
               <Field
                 type='password'
@@ -167,7 +166,7 @@ const SignUp = () => {
             </BoxInput>
             <BoxInput>
               <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Confirmar senha
+                Confirmar senha *
               </label>
               <Field
                 type='password'
