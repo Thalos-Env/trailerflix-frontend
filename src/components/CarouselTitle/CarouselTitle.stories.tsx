@@ -6,4 +6,7 @@ export default {
   component: CarouselTitle,
 } as Meta
 
-export const Default: Story = () => <CarouselTitle />
+export const Default: Story<{ children: string }> = (args) => <CarouselTitle {...args} />
+Default.args = {
+  children: 'CarouselTitle',
+}
