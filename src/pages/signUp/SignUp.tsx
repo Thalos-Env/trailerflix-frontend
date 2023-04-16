@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import * as Yup from 'yup'
 import { useFormik, Form, FormikProvider, Field } from 'formik'
 import { Link } from 'react-router-dom'
-// import { input, IconButton, InputAdornment, Button } from "@mui/material";
-// import VisibilityIcon from "@mui/icons-material/Visibility";
-// import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-// import { postUserRegister } from "../../store/modules/user/UserSlice";
-// import { useAppDispatch } from "../../store/hooks";
 import { ClipLoader } from 'react-spinners'
-import { BoxCadastro, BoxCenter, BoxInput, Button, Container, Loading } from './styles'
+import {
+  BoxCadastro,
+  BoxCenter,
+  BoxInput,
+  Button,
+  Container,
+  Loading,
+  TextResponse,
+} from './styles'
+import { UserContext, UserContextProvider } from '../../context/UserContext'
+import { ToastContainer } from 'react-toastify'
 
 interface Values {
   name: string
@@ -18,26 +23,16 @@ interface Values {
 }
 
 const SignUp = () => {
+  const { signUp, response } = useContext(UserContext)
   // const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState<boolean>(false)
-  const [response, setResponse] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
 
   // const navigate = useNavigate()
 
-  const register = (values: Values) => {
+  const register = async (values: Values) => {
+    const { email, password, name } = values
     setLoading(true)
-    setError(false)
-    // const { email, password, name } = values
-    console.log(values)
-    setResponse('')
-    // const usuario = await dispatch(
-    // postUserRegister({
-    // email: email,
-    // password: password,
-    // name: Name,
-    // })
-    // );
+    await signUp({ name, email, password, profile: 'user' })
     setLoading(false)
   }
 
@@ -82,126 +77,129 @@ const SignUp = () => {
 
   return (
     // <div className='h-[100vh] w-[100vw] text-center flex items-center justify-center bg-blue-200'>
-    <Container>
-      {loading && (
-        <Loading>
-          <ClipLoader color={'#bdbecd'} size={60} />
-        </Loading>
-      )}
-      <BoxCadastro>
-        <BoxCenter>
-          <h1>Cadastro</h1>
-        </BoxCenter>
-        {error && <div className='text-[16px] mb-[15px] mt-[-10px] text-red-500'>{response}</div>}
-        <FormikProvider value={formik}>
-          <Form onSubmit={handleSubmit}>
-            <BoxInput>
-              <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Nome *
-              </label>
-              <Field
-                id='input-name'
-                style={{
-                  border:
-                    errors.name && touched.name
-                      ? 'red 2px solid'
-                      : !errors.name && touched.name && 'green 2px solid',
-                  width: '100%',
-                  padding: '10px',
-                  borderRadius: '5px',
-                }}
-                {...getFieldProps('name')}
-              />
-              {errors.name && touched.name ? (
-                <div style={{ color: 'red', marginLeft: '20px', fontSize: '13px' }}>
-                  {errors.name}
-                </div>
-              ) : null}
-            </BoxInput>
-            <BoxInput>
-              <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Email *
-              </label>
-              <Field
-                type='email'
-                style={{
-                  border:
-                    errors.email && touched.email
-                      ? 'red 2px solid'
-                      : !errors.email && touched.email && 'green 2px solid',
-                  width: '100%',
-                  padding: '10px',
-                  borderRadius: '5px',
-                }}
-                {...getFieldProps('email')}
-              />
-              {errors.email && touched.email && (
-                <div style={{ color: 'red', marginLeft: '20px', fontSize: '13px' }}>
-                  {errors.email}
-                </div>
-              )}
-            </BoxInput>
-            <BoxInput>
-              <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Senha *
-              </label>
-              <Field
-                type='password'
-                style={{
-                  width: '100%',
-                  border:
-                    errors.password && touched.password
-                      ? 'red 2px solid'
-                      : !errors.password && touched.password && 'green 2px solid',
-                  padding: '10px',
-                  borderRadius: '5px',
-                }}
-                {...getFieldProps('password')}
-              />
-              {touched.password && errors.password && (
-                <div style={{ color: 'red', fontSize: '13px' }}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{errors.password}
-                </div>
-              )}
-            </BoxInput>
-            <BoxInput>
-              <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
-                Confirmar senha *
-              </label>
-              <Field
-                type='password'
-                style={{
-                  width: '100%',
-                  border:
-                    errors.confirmPassword && touched.confirmPassword
-                      ? 'red 2px solid'
-                      : !errors.confirmPassword && touched.confirmPassword && 'green 2px solid',
-                  padding: '10px',
-                  borderRadius: '5px',
-                }}
-                {...getFieldProps('confirmPassword')}
-              />
-              {touched.confirmPassword && errors.confirmPassword && (
-                <div style={{ color: 'red', fontSize: '13px' }}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{errors.confirmPassword}
-                </div>
-              )}
-            </BoxInput>
-            <BoxInput style={{ marginTop: '20px' }}>
-              <Button type='submit'>
-                <h4>CADASTRAR</h4>
-              </Button>
-            </BoxInput>
-          </Form>
-        </FormikProvider>
-        <BoxCenter style={{ marginBottom: '20px' }}>
-          Já possui uma conta? &nbsp;
-          <Link to='/' style={{ color: 'blue' }}>
-            ENTRAR
-          </Link>
-        </BoxCenter>
-      </BoxCadastro>
-    </Container>
+    <UserContextProvider>
+      <ToastContainer />
+      <Container>
+        {loading && (
+          <Loading>
+            <ClipLoader color={'#bdbecd'} size={60} />
+          </Loading>
+        )}
+        <BoxCadastro>
+          <BoxCenter>
+            <h1>Cadastro</h1>
+            {response && <TextResponse>{response}</TextResponse>}
+          </BoxCenter>
+          <FormikProvider value={formik}>
+            <Form onSubmit={handleSubmit}>
+              <BoxInput>
+                <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
+                  Nome *
+                </label>
+                <Field
+                  id='input-name'
+                  style={{
+                    border:
+                      errors.name && touched.name
+                        ? 'red 2px solid'
+                        : !errors.name && touched.name && 'green 2px solid',
+                    width: '100%',
+                    padding: '10px',
+                    borderRadius: '5px',
+                  }}
+                  {...getFieldProps('name')}
+                />
+                {errors.name && touched.name ? (
+                  <div style={{ color: 'red', marginLeft: '20px', fontSize: '13px' }}>
+                    {errors.name}
+                  </div>
+                ) : null}
+              </BoxInput>
+              <BoxInput>
+                <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
+                  Email *
+                </label>
+                <Field
+                  type='email'
+                  style={{
+                    border:
+                      errors.email && touched.email
+                        ? 'red 2px solid'
+                        : !errors.email && touched.email && 'green 2px solid',
+                    width: '100%',
+                    padding: '10px',
+                    borderRadius: '5px',
+                  }}
+                  {...getFieldProps('email')}
+                />
+                {errors.email && touched.email && (
+                  <div style={{ color: 'red', marginLeft: '20px', fontSize: '13px' }}>
+                    {errors.email}
+                  </div>
+                )}
+              </BoxInput>
+              <BoxInput>
+                <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
+                  Senha *
+                </label>
+                <Field
+                  type='password'
+                  style={{
+                    width: '100%',
+                    border:
+                      errors.password && touched.password
+                        ? 'red 2px solid'
+                        : !errors.password && touched.password && 'green 2px solid',
+                    padding: '10px',
+                    borderRadius: '5px',
+                  }}
+                  {...getFieldProps('password')}
+                />
+                {touched.password && errors.password && (
+                  <div style={{ color: 'red', fontSize: '13px' }}>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{errors.password}
+                  </div>
+                )}
+              </BoxInput>
+              <BoxInput>
+                <label style={{ marginLeft: '10px' }} htmlFor='input-name'>
+                  Confirmar senha *
+                </label>
+                <Field
+                  type='password'
+                  style={{
+                    width: '100%',
+                    border:
+                      errors.confirmPassword && touched.confirmPassword
+                        ? 'red 2px solid'
+                        : !errors.confirmPassword && touched.confirmPassword && 'green 2px solid',
+                    padding: '10px',
+                    borderRadius: '5px',
+                  }}
+                  {...getFieldProps('confirmPassword')}
+                />
+                {touched.confirmPassword && errors.confirmPassword && (
+                  <div style={{ color: 'red', fontSize: '13px' }}>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{errors.confirmPassword}
+                  </div>
+                )}
+              </BoxInput>
+              <BoxInput style={{ marginTop: '20px' }}>
+                <Button type='submit'>
+                  <h4>CADASTRAR</h4>
+                </Button>
+              </BoxInput>
+            </Form>
+          </FormikProvider>
+          <BoxCenter style={{ marginBottom: '20px', marginTop: '20px' }}>
+            Já possui uma conta? &nbsp;
+            <Link to='/' style={{ color: 'blue' }}>
+              ENTRAR
+            </Link>
+          </BoxCenter>
+        </BoxCadastro>
+      </Container>
+    </UserContextProvider>
   )
 }
 

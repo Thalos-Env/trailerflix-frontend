@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: ${theme.colors.black};
@@ -21,9 +22,16 @@ export const BoxCadastro = styled.div`
 `
 
 export const BoxCenter = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   text-align: center;
+`
+
+export const BoxCenter2 = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
 `
 
 export const BoxInput = styled.div`
@@ -49,4 +57,9 @@ export const Button = styled.button`
   }
   cursor: pointer;
   color: white;
+`
+
+export const TextResponse = styled.div`
+  font-size: 16px;
+  color: red;
 `
