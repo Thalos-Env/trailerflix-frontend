@@ -6,5 +6,5 @@ export default {
   component: MovieCard,
 } as Meta
 
-export const Horizontal: Story = () => <MovieCard />
+export const Horizontal: Story = () => <MovieCard direction='horizontal' />
 export const Vertical: Story = () => <MovieCard direction='vertical' />

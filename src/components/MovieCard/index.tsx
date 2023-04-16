@@ -5,7 +5,7 @@ type MovieCardProps = {
   direction?: 'horizontal' | 'vertical'
 }
 
-const MovieCard = ({ children, direction = 'horizontal' }: MovieCardProps) => (
+const MovieCard = ({ children, direction = 'vertical' }: MovieCardProps) => (
   <S.Wrapper direction={direction}>{children}</S.Wrapper>
 )
 

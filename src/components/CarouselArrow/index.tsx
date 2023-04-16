@@ -6,7 +6,7 @@ type CarouselArrowProps = {
 }
 
 const CarouselArrow = ({ arrowDirection }: CarouselArrowProps) => (
-  <S.Wrapper>
+  <S.Wrapper position={arrowDirection}>
     <Icon icon={arrowDirection === 'left' ? 'arrowLeft' : 'arrowRight'} sizeRem='5rem' />
   </S.Wrapper>
 )
