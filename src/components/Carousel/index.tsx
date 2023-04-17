@@ -1,15 +1,27 @@
+import { useRef } from 'react'
 import CarouselArrow from '../CarouselArrow'
 import CarouselTitle from '../CarouselTitle'
 import MovieCard from '../MovieCard'
 import * as S from './styles'
 
 const Carousel = () => {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleScroll = (side: string) => {
+    const container = containerRef.current
+    const multiplier = side === 'left' ? -1 : 1
+    const scrollX = Math.round(window.innerWidth / 3) * multiplier
+    if (container) {
+      container.scrollBy({ left: scrollX, behavior: 'smooth' })
+    }
+  }
+
   return (
     <S.Wrapper>
       <CarouselTitle>Carousel</CarouselTitle>
       <S.WrapperSlider>
-        <CarouselArrow arrowDirection='left' />
-        <S.Slider>
+        <CarouselArrow arrowDirection='left' handleScroll={() => handleScroll('left')} />
+        <S.Slider ref={containerRef}>
           <MovieCard />
           <MovieCard />
           <MovieCard />
@@ -22,7 +34,7 @@ const Carousel = () => {
           <MovieCard />
           <MovieCard />
         </S.Slider>
-        <CarouselArrow arrowDirection='right' />
+        <CarouselArrow arrowDirection='right' handleScroll={() => handleScroll('right')} />
       </S.WrapperSlider>
     </S.Wrapper>
   )
