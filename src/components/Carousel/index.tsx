@@ -10,8 +10,8 @@ const Carousel = () => {
   const handleScroll = (side: string) => {
     const container = containerRef.current
     const multiplier = side === 'left' ? -1 : 1
-    const scrollX = Math.round(window.innerWidth / 3) * multiplier
     if (container) {
+      const scrollX = Math.round(container?.offsetWidth / 4) * multiplier
       container.scrollBy({ left: scrollX, behavior: 'smooth' })
     }
   }
