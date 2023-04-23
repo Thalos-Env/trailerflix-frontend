@@ -1,10 +1,14 @@
 import { useRef } from 'react'
 import CarouselArrow from '../CarouselArrow'
 import CarouselTitle from '../CarouselTitle'
-import MovieCard from '../MovieCard'
 import * as S from './styles'
 
-const Carousel = () => {
+type CarouselProps = {
+  title: string
+  children: React.ReactNode
+}
+
+const Carousel = ({ title, children }: CarouselProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = (side: string) => {
@@ -18,22 +22,10 @@ const Carousel = () => {
 
   return (
     <S.Wrapper>
-      <CarouselTitle>Carousel</CarouselTitle>
+      <CarouselTitle>{title}</CarouselTitle>
       <S.WrapperSlider>
         <CarouselArrow arrowDirection='left' handleScroll={() => handleScroll('left')} />
-        <S.Slider ref={containerRef}>
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-        </S.Slider>
+        <S.Slider ref={containerRef}>{children}</S.Slider>
         <CarouselArrow arrowDirection='right' handleScroll={() => handleScroll('right')} />
       </S.WrapperSlider>
     </S.Wrapper>
