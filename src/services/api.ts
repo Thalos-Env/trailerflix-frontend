@@ -2,6 +2,10 @@ import axios from 'axios'
 
 export const { REACT_APP_API_URL, REACT_APP_API_KEY } = process.env
 
+export const api = axios.create({
+  baseURL: 'http://localhost:8080',
+})
+
 const basicFetch = async (endpoint: string) => {
   const response = await axios.get(`${REACT_APP_API_URL}${endpoint}`)
 

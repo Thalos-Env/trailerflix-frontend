@@ -4,14 +4,18 @@ import AppRoutes from './routes'
 
 import GlobalSyles from './styles/global'
 import theme from './styles/theme'
+import 'react-toastify/dist/ReactToastify.css'
+import { UserContextProvider } from './context/UserContext'
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <GlobalSyles />
-        <AppRoutes />
-      </BrowserRouter>
+      <UserContextProvider>
+        <BrowserRouter>
+          <GlobalSyles />
+          <AppRoutes />
+        </BrowserRouter>
+      </UserContextProvider>
     </ThemeProvider>
   )
 }
