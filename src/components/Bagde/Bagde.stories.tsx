@@ -6,4 +6,8 @@ export default {
   component: Bagde,
 } as Meta
 
-export const Default: Story = () => <Bagde />
+export const Bom: Story = () => <Bagde variant='good' />
+
+export const EnganouBem: Story = () => <Bagde variant='bad' />
+
+export const Novo: Story = () => <Bagde variant='new' />
