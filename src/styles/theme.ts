@@ -43,6 +43,7 @@ export default {
     secondary: '#14EBF9',
     lightBg: '#F2F2F2',
     mainBg: '#171A29',
+    mainDarkBg: '#090B13',
     cardBg: '#383F49',
     hoverPrimary: '#2F82F6',
     hoverWhite: '#C3C3C3',
