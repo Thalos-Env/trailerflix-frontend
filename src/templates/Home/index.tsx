@@ -5,7 +5,7 @@ import MenuHeader from '../../components/MenuHeader'
 import MovieCard from '../../components/MovieCard'
 import * as S from './styles'
 
-const Home = () => {
+const HomeTemplate = () => {
   return (
     <S.Wrapper>
       <MenuHeader />
@@ -37,4 +37,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeTemplate
