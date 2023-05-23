@@ -21,7 +21,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    padding-left: ${theme.spacings.xsmall};
+    padding-left: ${theme.spacings.large};
+    padding-right: 50%;
 
     background: linear-gradient(to right, ${theme.colors.mainBg} 30%, transparent 70%);
     width: inherit;
@@ -38,6 +39,7 @@ export const MovieTitle = styled.h1`
 export const MovieDescription = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.white};
+    margin-bottom: ${theme.spacings.xsmall};
   `}
 `
 
