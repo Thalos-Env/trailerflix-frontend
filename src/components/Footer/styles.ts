@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     padding: ${theme.spacings.medium} 0;
     gap: ${theme.spacings.xsmall};
+    margin-top: ${theme.spacings.xxlarge};
   `}
 `
 
