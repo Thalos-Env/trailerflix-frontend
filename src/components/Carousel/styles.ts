@@ -1,7 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
-  padding-left: 2rem;
+  ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall} 0;
+  `}
 `
 
 export const WrapperSlider = styled.div`
