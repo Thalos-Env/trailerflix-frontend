@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     border: ${theme.border.size.small} solid ${theme.border.colors.whiteTransparent};
     border-radius: ${theme.border.radius.small};
     max-width: max-content;
+    background-color: ${theme.colors.mainBg};
   `}
 `
 
