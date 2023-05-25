@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     padding: ${theme.spacings.xxsmall} ${theme.spacings.large};
     position: fixed;
-    background-color: ${theme.colors.mainBg};
+    background-color: ${theme.colors.mainBgOpacity};
     top: 0;
     left: 0;
     z-index: ${theme.layers.menu};
