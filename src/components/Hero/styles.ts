@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
     padding-left: ${theme.spacings.large};
     padding-right: 50%;
 
-    background: linear-gradient(to right, ${theme.colors.mainBg} 30%, transparent 70%);
+    background: linear-gradient(to right, ${theme.colors.mainBg} 40%, transparent 70%);
     width: inherit;
     height: inherit;
   `}
