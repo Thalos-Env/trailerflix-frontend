@@ -48,7 +48,7 @@ const SignIn = () => {
       stayLogged: false,
     },
     validationSchema: SignupSchema,
-    onSubmit: (values, actions) => {
+    onSubmit: (values: Values, actions: { setSubmitting: (arg0: boolean) => void }) => {
       setTimeout(() => {
         login(values)
         actions.setSubmitting(false)

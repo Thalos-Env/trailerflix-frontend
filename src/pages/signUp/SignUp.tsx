@@ -65,7 +65,7 @@ const SignUp = () => {
       confirmPassword: '',
     },
     validationSchema: SignupSchema,
-    onSubmit: (values, actions) => {
+    onSubmit: (values: Values, actions: { setSubmitting: (arg0: boolean) => void }) => {
       setTimeout(() => {
         register(values)
         actions.setSubmitting(false)
