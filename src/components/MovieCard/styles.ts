@@ -10,7 +10,7 @@ const wrapperModifiers = {
     height: 14rem;
   `,
   vertical: () => css`
-    width: 14rem;
+    min-width: 14rem;
     height: 24rem;
   `,
 }
