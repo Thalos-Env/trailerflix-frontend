@@ -5,5 +5,6 @@ export const Wrapper = styled.h2`
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.xxlarge};
     font-weight: ${theme.font.bold};
+    padding: 0 ${theme.spacings.large};
   `}
 `

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Avatar from '../Avatar'
 import Logo from '../Logo'
 import NavBar from '../NavBar'
@@ -11,8 +11,22 @@ const imgSrc = '../../assets/images/user.jpg'
 const MenuHeader = () => {
   const [onSearch, setOnSearch] = useState(false)
   const [search, setSearch] = useState('')
+  const [scrollBg, setScrollBg] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollBg(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <S.Wrapper>
+    <S.Wrapper scrollBg={scrollBg}>
       <S.Section>
         <Logo />
         <NavBar>
